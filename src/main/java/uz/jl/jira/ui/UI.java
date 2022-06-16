@@ -43,6 +43,10 @@ public class UI {
         }
     }
 
+    /**
+     * Abdullohdan kuchli comment 
+     */
+
     private static void userCreate() {
         UserCreateVO.UserCreateVOBuilder builder = UserCreateVO.builder();
         builder.userName(Reader.readLine("Username : "));
