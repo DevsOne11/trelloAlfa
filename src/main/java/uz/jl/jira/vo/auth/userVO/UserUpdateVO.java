@@ -1,4 +1,4 @@
-package uz.jl.jira.vo.auth;
+package uz.jl.jira.vo.auth.userVO;
 
 import uz.jl.jira.vo.GenericVO;
 

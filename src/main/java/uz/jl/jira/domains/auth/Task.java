@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Task implements BaseEntity {
+public class Task extends Auditable{
     private Long id;
     private String name;
     private List<Comment> commentList;

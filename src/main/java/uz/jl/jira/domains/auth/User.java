@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User implements BaseEntity {
+public class User extends Auditable {
     private Long id;
     private String userName;
     private String password;

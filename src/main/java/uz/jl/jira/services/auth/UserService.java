@@ -1,7 +1,5 @@
 package uz.jl.jira.services.auth;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import uz.jl.jira.configs.ApplicationContextHolder;
 import uz.jl.jira.criteria.UserCriteria;
@@ -10,9 +8,9 @@ import uz.jl.jira.mappers.BaseMapper;
 import uz.jl.jira.repository.AbstractRepository;
 import uz.jl.jira.repository.auth.UserRepository;
 import uz.jl.jira.services.GenericCRUDService;
-import uz.jl.jira.vo.auth.UserCreateVO;
-import uz.jl.jira.vo.auth.UserUpdateVO;
-import uz.jl.jira.vo.auth.UserVO;
+import uz.jl.jira.vo.auth.userVO.UserCreateVO;
+import uz.jl.jira.vo.auth.userVO.UserUpdateVO;
+import uz.jl.jira.vo.auth.userVO.UserVO;
 import uz.jl.jira.vo.response.Data;
 import uz.jl.jira.vo.response.ErrorVO;
 import uz.jl.jira.vo.response.ResponseEntity;

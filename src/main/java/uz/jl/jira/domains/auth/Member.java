@@ -13,7 +13,8 @@ import uz.jl.jira.domains.BaseEntity;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member extends User {
+public class Member extends Auditable {
     private Long memberId;
+    private Long userId;
     private Boolean isTeamLead;
 }

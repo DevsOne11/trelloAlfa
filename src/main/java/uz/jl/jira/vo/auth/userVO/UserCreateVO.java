@@ -1,4 +1,4 @@
-package uz.jl.jira.vo.auth;
+package uz.jl.jira.vo.auth.userVO;
 
 import lombok.*;
 import uz.jl.jira.vo.BaseVO;

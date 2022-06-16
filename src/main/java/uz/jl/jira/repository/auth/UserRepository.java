@@ -16,6 +16,7 @@ import java.util.Optional;
  * @since 14/06/22/14:45 (Tuesday)
  * jira/IntelliJ IDEA
  */
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class UserRepository implements GenericCRUDRepository<User, UserCriteria, Long> {
 

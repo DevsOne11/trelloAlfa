@@ -6,8 +6,8 @@ import uz.jl.jira.services.auth.UserService;
 import uz.jl.jira.utils.Color;
 import uz.jl.jira.utils.Reader;
 import uz.jl.jira.utils.Writer;
-import uz.jl.jira.vo.auth.UserCreateVO;
-import uz.jl.jira.vo.auth.UserVO;
+import uz.jl.jira.vo.auth.userVO.UserCreateVO;
+import uz.jl.jira.vo.auth.userVO.UserVO;
 import uz.jl.jira.vo.response.Data;
 import uz.jl.jira.vo.response.ResponseEntity;
 
