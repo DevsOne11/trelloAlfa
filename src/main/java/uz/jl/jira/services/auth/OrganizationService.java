@@ -6,7 +6,6 @@ import uz.jl.jira.criteria.OrganizationCriteria;
 import uz.jl.jira.mappers.BaseMapper;
 import uz.jl.jira.repository.AbstractRepository;
 import uz.jl.jira.repository.auth.OrganizationRepository;
-import uz.jl.jira.repository.auth.UserRepository;
 import uz.jl.jira.services.GenericCRUDService;
 import uz.jl.jira.vo.auth.organizationVO.OrganizationCreateVO;
 import uz.jl.jira.vo.auth.organizationVO.OrganizationUpdateVO;
@@ -14,7 +13,6 @@ import uz.jl.jira.vo.auth.organizationVO.OrganizationVO;
 import uz.jl.jira.vo.response.Data;
 import uz.jl.jira.vo.response.ResponseEntity;
 
-import javax.management.OperationsException;
 import java.util.List;
 
 /**

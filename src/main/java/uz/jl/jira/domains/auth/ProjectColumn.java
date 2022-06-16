@@ -1,7 +1,5 @@
 package uz.jl.jira.domains.auth;
 
-import uz.jl.jira.domains.BaseEntity;
-
 import java.util.List;
 
 /**

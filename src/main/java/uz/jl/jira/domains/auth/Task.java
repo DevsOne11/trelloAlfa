@@ -1,7 +1,6 @@
 package uz.jl.jira.domains.auth;
 
 import lombok.*;
-import uz.jl.jira.domains.BaseEntity;
 
 import java.util.List;
 

@@ -1,7 +1,9 @@
 package uz.jl.jira.domains.auth;
 
-import lombok.*;
-import uz.jl.jira.domains.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * @Author :  Asliddin Ziyodullaev

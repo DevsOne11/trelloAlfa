@@ -1,6 +1,5 @@
 package uz.jl.jira.repository.auth;
 
-import lombok.extern.java.Log;
 import uz.jl.jira.criteria.CommentCriteria;
 import uz.jl.jira.domains.auth.Comment;
 import uz.jl.jira.repository.GenericCRUDRepository;

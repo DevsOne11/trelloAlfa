@@ -3,7 +3,6 @@ package uz.jl.jira.vo.response;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import uz.jl.jira.vo.response.Data;
 
 /**
  * @author "Elmurodov Javohir"

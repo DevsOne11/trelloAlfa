@@ -6,7 +6,6 @@ import uz.jl.jira.criteria.TaskCriteria;
 import uz.jl.jira.mappers.BaseMapper;
 import uz.jl.jira.repository.AbstractRepository;
 import uz.jl.jira.repository.auth.TaskRepository;
-import uz.jl.jira.repository.auth.UserRepository;
 import uz.jl.jira.services.GenericCRUDService;
 import uz.jl.jira.vo.auth.taskVO.TaskCreateVO;
 import uz.jl.jira.vo.auth.taskVO.TaskUpdateVO;
