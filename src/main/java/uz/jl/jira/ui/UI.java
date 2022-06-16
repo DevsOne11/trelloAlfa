@@ -43,13 +43,6 @@ public class UI {
         }
     }
 
-    /**
-     * Abdullohdan kuchli comment   --fdd
-     */
-
-    //Assalomu aleykum
-
-    //nima gaaaaaap
 
     private static void userCreate() {
 
