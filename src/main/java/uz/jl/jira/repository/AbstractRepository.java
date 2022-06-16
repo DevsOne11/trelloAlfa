@@ -9,8 +9,6 @@ package uz.jl.jira.repository;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import uz.jl.jira.mappers.BaseMapper;
 
 /**

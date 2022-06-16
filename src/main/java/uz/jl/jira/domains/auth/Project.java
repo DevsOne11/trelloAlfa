@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Project {
+public class Project extends Auditable {
     private Long id;
     private String name;
     private List<ProjectColumn> columnList;

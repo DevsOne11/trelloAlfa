@@ -1,7 +1,9 @@
 package uz.jl.jira.domains.auth;
 
-import lombok.*;
-import uz.jl.jira.domains.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * @Author :  Asliddin Ziyodullaev
@@ -13,7 +15,8 @@ import uz.jl.jira.domains.BaseEntity;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member extends User {
+public class Member extends Auditable {
     private Long memberId;
+    private Long userId;
     private Boolean isTeamLead;
 }

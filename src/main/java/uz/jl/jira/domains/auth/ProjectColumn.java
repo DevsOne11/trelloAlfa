@@ -7,7 +7,7 @@ import java.util.List;
  * @Date :  01:37   16/06/22
  * @Project :  trelloBeta
  */
-public class ProjectColumn {
+public class ProjectColumn extends Auditable {
     private Long id;
     private String name;
     private List<Task> taskList;

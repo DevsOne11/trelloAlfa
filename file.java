@@ -122,6 +122,4 @@ gradle-app.setting
 /.idea/misc.xml
 /settings.gradle
 /.idea/vcs.xml
-/.idea/git_toolbox_prj.xmlorganization/
-
 /.idea/git_toolbox_prj.xml

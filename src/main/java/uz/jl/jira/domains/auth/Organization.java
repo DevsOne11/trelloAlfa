@@ -2,6 +2,7 @@ package uz.jl.jira.domains.auth;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -16,11 +17,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Organization {
+public class Organization extends Auditable{
 
     // TODO: 16/06/22   MAKING CRUD 
     private Long id;
     private String name;
     private User owner;
     private List<Project> projectList;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }

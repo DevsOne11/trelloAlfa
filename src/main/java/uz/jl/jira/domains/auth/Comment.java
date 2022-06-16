@@ -1,9 +1,6 @@
 package uz.jl.jira.domains.auth;
 
 import lombok.*;
-import uz.jl.jira.domains.BaseEntity;
-
-import java.util.List;
 
 /**
  * @Author :  Asliddin Ziyodullaev
@@ -19,7 +16,7 @@ import java.util.List;
 @Builder
 
 
-public class Comment implements BaseEntity {
+public class Comment extends Auditable {
     private Long id;
     private String description;
     private User commentator;

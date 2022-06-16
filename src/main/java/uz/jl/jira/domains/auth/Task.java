@@ -1,7 +1,6 @@
 package uz.jl.jira.domains.auth;
 
 import lombok.*;
-import uz.jl.jira.domains.BaseEntity;
 
 import java.util.List;
 
@@ -16,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Task implements BaseEntity {
+public class Task extends Auditable{
     private Long id;
     private String name;
     private List<Comment> commentList;

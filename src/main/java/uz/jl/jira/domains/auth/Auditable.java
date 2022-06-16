@@ -1,10 +1,12 @@
 package uz.jl.jira.domains.auth;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import uz.jl.jira.domains.BaseEntity;
 
 import java.time.LocalDateTime;
-import java.util.Locale;
 
 /**
  * @Author :  Asliddin Ziyodullaev
@@ -17,7 +19,6 @@ import java.util.Locale;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Auditable implements BaseEntity {
     private LocalDateTime createdAt;
     private User createdBy;
