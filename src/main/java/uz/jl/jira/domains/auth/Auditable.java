@@ -17,7 +17,6 @@ import java.util.Locale;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Auditable implements BaseEntity {
     private LocalDateTime createdAt;
     private User createdBy;
