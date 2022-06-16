@@ -47,6 +47,8 @@ public class UI {
      * Abdullohdan kuchli comment   --fdd
      */
 
+    //Assalomu aleykum
+
     private static void userCreate() {
 
         UserCreateVO.UserCreateVOBuilder builder = UserCreateVO.builder();
