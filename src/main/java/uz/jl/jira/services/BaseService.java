@@ -6,4 +6,5 @@ package uz.jl.jira.services;
  * jira/IntelliJ IDEA
  */
 public interface BaseService {
+
 }

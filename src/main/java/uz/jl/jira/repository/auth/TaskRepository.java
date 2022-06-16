@@ -13,6 +13,8 @@ import java.util.Optional;
  * @Project :  trelloAlfa
  */
 public class TaskRepository implements GenericCRUDRepository<Task, TaskCriteria,Long> {
+
+    private static TaskRepository instance;
     @Override
     public void create(Task entity) {
 
@@ -36,5 +38,11 @@ public class TaskRepository implements GenericCRUDRepository<Task, TaskCriteria,
     @Override
     public Optional<List<Task>> findAll(TaskCriteria criteria) {
         return Optional.empty();
+    }
+    public static TaskRepository getInstance() {
+        if (instance == null) {
+            instance = new TaskRepository();
+        }
+        return instance;
     }
 }

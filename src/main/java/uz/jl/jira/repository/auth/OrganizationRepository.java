@@ -17,6 +17,8 @@ import java.util.Optional;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class OrganizationRepository implements GenericCRUDRepository<Organization, OrganizationCriteria,Long> {
+
+    private static OrganizationRepository instance;
     @Override
     public void create(Organization entity) {
 
@@ -40,5 +42,12 @@ public class OrganizationRepository implements GenericCRUDRepository<Organizatio
     @Override
     public Optional<List<Organization>> findAll(OrganizationCriteria criteria) {
         return Optional.empty();
+    }
+
+    public static OrganizationRepository getInstance() {
+        if (instance == null) {
+            instance = new OrganizationRepository();
+        }
+        return instance;
     }
 }
