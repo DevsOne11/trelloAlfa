@@ -13,6 +13,8 @@ import java.util.Optional;
  * @Project :  trelloAlfa
  */
 public class CommentRepository implements GenericCRUDRepository<Comment, CommentCriteria, Long> {
+
+    private static CommentRepository instance;
     @Override
     public void create(Comment entity) {
 
@@ -36,5 +38,12 @@ public class CommentRepository implements GenericCRUDRepository<Comment, Comment
     @Override
     public Optional<List<Comment>> findAll(CommentCriteria criteria) {
         return Optional.empty();
+    }
+
+    public static CommentRepository getInstance() {
+        if (instance == null) {
+            instance = new CommentRepository();
+        }
+        return instance;
     }
 }

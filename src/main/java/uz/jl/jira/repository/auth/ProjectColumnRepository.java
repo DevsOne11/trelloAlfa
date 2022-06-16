@@ -13,6 +13,8 @@ import java.util.Optional;
  * @Project :  trelloAlfa
  */
 public class ProjectColumnRepository implements GenericCRUDRepository<ProjectColumn, ProjectColumnCriteria,Long> {
+
+    private static ProjectColumnRepository instance;
     @Override
     public void create(ProjectColumn entity) {
 
@@ -36,5 +38,11 @@ public class ProjectColumnRepository implements GenericCRUDRepository<ProjectCol
     @Override
     public Optional<List<ProjectColumn>> findAll(ProjectColumnCriteria criteria) {
         return Optional.empty();
+    }
+    public static ProjectColumnRepository getInstance() {
+        if (instance == null) {
+            instance = new ProjectColumnRepository();
+        }
+        return instance;
     }
 }
