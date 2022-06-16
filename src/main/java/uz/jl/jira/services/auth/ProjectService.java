@@ -6,7 +6,6 @@ import uz.jl.jira.criteria.UserCriteria;
 import uz.jl.jira.mappers.BaseMapper;
 import uz.jl.jira.repository.AbstractRepository;
 import uz.jl.jira.repository.auth.ProjectRepository;
-import uz.jl.jira.repository.auth.UserRepository;
 import uz.jl.jira.services.GenericCRUDService;
 import uz.jl.jira.vo.auth.projectVO.ProjectCreateVO;
 import uz.jl.jira.vo.auth.projectVO.ProjectUpdateVO;
