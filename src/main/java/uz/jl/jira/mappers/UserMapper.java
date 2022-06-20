@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
  * @Date :  09:16   20/06/22
  * @Project :  trelloAlfa
  */
-public class UserMapper {
+public class UserMapper implements BaseMapper {
     private static UserMapper instance;
     public  User getUser(UserVO userVO){
         User user = new User();

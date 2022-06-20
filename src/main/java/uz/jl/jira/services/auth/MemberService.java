@@ -6,7 +6,6 @@ import uz.jl.jira.criteria.MemberCriteria;
 import uz.jl.jira.mappers.BaseMapper;
 import uz.jl.jira.repository.AbstractRepository;
 import uz.jl.jira.repository.auth.MemberRepository;
-import uz.jl.jira.repository.auth.ProjectRepository;
 import uz.jl.jira.services.GenericCRUDService;
 import uz.jl.jira.vo.auth.memberVO.MemberCreateVO;
 import uz.jl.jira.vo.auth.memberVO.MemberUpdateVO;
@@ -37,12 +36,12 @@ public class MemberService extends AbstractRepository<MemberRepository, BaseMapp
     }
 
     @Override
-    public ResponseEntity<Data<Void>> delete(@NonNull Long aLong) {
+    public ResponseEntity<Data<String>> delete(@NonNull Long aLong) {
         return null;
     }
 
     @Override
-    public ResponseEntity<Data<Void>> update(@NonNull MemberUpdateVO dto) {
+    public ResponseEntity<Data<String>> update(@NonNull MemberUpdateVO dto) {
         return null;
     }
 

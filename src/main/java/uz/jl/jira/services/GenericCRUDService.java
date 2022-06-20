@@ -26,10 +26,29 @@ public interface GenericCRUDService<
         UVO extends GenericVO,
         C extends GenericCriteria,
         ID extends Serializable> extends GenericService<VO, C, ID> {
+
+    /**
+     *
+     * @param dto -> Value Object to persist new entity
+     * @return It returns responce, ID os entity
+     */
     ResponseEntity<Data<ID>> create(@NonNull CVO dto);
 
-    ResponseEntity<Data<Void>> delete(@NonNull ID id);
 
-    ResponseEntity<Data<Void>> update(@NonNull UVO dto);
+    /**
+     *
+     * @param id ID of entity
+     * @return it returns nothing just delete the entity who in this ID
+     */
+    ResponseEntity<Data<String>> delete(@NonNull ID id);
+
+    /**
+     *
+     * @param dto -> Value Object to persist new entity
+     * @return ->
+    it returns nothing just update this entity (dto)
+     */
+    ResponseEntity<Data<String>> update(@NonNull UVO dto);
+
 
 }

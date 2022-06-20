@@ -3,7 +3,7 @@ package uz.jl.jira.configs;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import uz.jl.jira.domains.auth.*;
-import uz.jl.jira.mappers.BaseMapper;
+import uz.jl.jira.mappers.*;
 import uz.jl.jira.repository.auth.*;
 import uz.jl.jira.services.auth.*;
 
@@ -13,13 +13,17 @@ public class ApplicationContextHolder {
         return switch (clazz.getSimpleName()) {
             case "UserService" -> (T) UserService.getInstance();
             case "UserRepository" -> (T) UserRepository.getInstance();
+            case "UserMapper" -> (T) UserMapper.getInstance();
 
+            case "Gson" -> getGsonBean();
 
             case "OrganizationService" -> (T) OrganizationService.getInstance();
             case "OrganizationRepository" -> (T) OrganizationRepository.getInstance();
+            case "OrganizationMapper" -> (T) OrgMapper.getInstance();
 
             case "ProjectService" -> (T) ProjectService.getInstance();
             case "ProjectRepository" -> (T) ProjectRepository.getInstance();
+            case "ProjectMapper" -> (T) ProjectMapper.getInstance();
 
             case "ProjectColumnService" -> (T) ProjectColumnService.getInstance();
             case "ProjectColumnRepository" -> (T) ProjectColumnRepository.getInstance();
@@ -32,6 +36,7 @@ public class ApplicationContextHolder {
 
             case "MemberService" -> (T) MemberService.getInstance();
             case "MemberRepository" -> (T) MemberRepository.getInstance();
+            case "MemberMapper" -> (T) MemberMapper.getInstance();
 
 
             case "BaseMapper" -> (T) new BaseMapper() {

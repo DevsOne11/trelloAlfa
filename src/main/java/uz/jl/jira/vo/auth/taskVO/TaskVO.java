@@ -20,8 +20,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
-
 public class TaskVO extends GenericVO {
     private Long id;
     private String name;

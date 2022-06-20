@@ -3,7 +3,6 @@ package uz.jl.jira.services.auth;
 import lombok.NonNull;
 import uz.jl.jira.configs.ApplicationContextHolder;
 import uz.jl.jira.criteria.ProjectColumnCriteria;
-import uz.jl.jira.criteria.ProjectCriteria;
 import uz.jl.jira.mappers.BaseMapper;
 import uz.jl.jira.repository.AbstractRepository;
 import uz.jl.jira.repository.auth.ProjectRepository;
@@ -11,7 +10,6 @@ import uz.jl.jira.services.GenericCRUDService;
 import uz.jl.jira.vo.auth.projectColumnVO.ProjectColumnCreateVO;
 import uz.jl.jira.vo.auth.projectColumnVO.ProjectColumnUpdateVO;
 import uz.jl.jira.vo.auth.projectColumnVO.ProjectColumnVO;
-import uz.jl.jira.vo.auth.projectVO.ProjectCreateVO;
 import uz.jl.jira.vo.response.Data;
 import uz.jl.jira.vo.response.ResponseEntity;
 
@@ -38,12 +36,12 @@ public class ProjectColumnService extends AbstractRepository<ProjectRepository, 
     }
 
     @Override
-    public ResponseEntity<Data<Void>> delete(@NonNull Long aLong) {
+    public ResponseEntity<Data<String>> delete(@NonNull Long aLong) {
         return null;
     }
 
     @Override
-    public ResponseEntity<Data<Void>> update(@NonNull ProjectColumnUpdateVO dto) {
+    public ResponseEntity<Data<String>> update(@NonNull ProjectColumnUpdateVO dto) {
         return null;
     }
 
