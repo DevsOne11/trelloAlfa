@@ -4,6 +4,8 @@ import lombok.*;
 import uz.jl.jira.domains.enums.Role;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author "Elmurodov Javohir"
@@ -16,11 +18,18 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class User extends Auditable {
     private Long id;
     private String userName;
     private String password;
-    private Role role;
+    private String email;
+    private List<Long> organizations = new ArrayList<>();
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    public void addOrganization(Long orgId) {
+        organizations.add(orgId);
+    }
+
 }

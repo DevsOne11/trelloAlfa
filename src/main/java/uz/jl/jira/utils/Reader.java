@@ -17,5 +17,9 @@ public class Reader {
         Writer.print(color + placeHolder + Color.RESET);
         return readLine();
     }
+    public static String option(){
+        Writer.green("  => ");
+        return Reader.readLine();
+    }
 
 }

@@ -2,6 +2,8 @@ package uz.jl.jira.domains.auth;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 /**
  * @Author :  Asliddin Ziyodullaev
  * @Date :  01:24   16/06/22
@@ -18,6 +20,11 @@ import lombok.*;
 
 public class Comment extends Auditable {
     private Long id;
-    private String description;
-    private User commentator;
+    private Long ownerId;
+    private LocalDateTime createdAt;
+    private Long createdBy;
+    private LocalDateTime updatedAt;
+    private Long updatedBy;
+    private boolean blocked;
+    private boolean deleted;
 }

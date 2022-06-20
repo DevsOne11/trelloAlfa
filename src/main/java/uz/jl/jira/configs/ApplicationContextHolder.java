@@ -1,5 +1,7 @@
 package uz.jl.jira.configs;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import uz.jl.jira.domains.auth.*;
 import uz.jl.jira.mappers.BaseMapper;
 import uz.jl.jira.repository.auth.*;
@@ -37,6 +39,14 @@ public class ApplicationContextHolder {
 
             default -> throw new RuntimeException("Bean with name '%s' not found".formatted(clazz.getSimpleName()));
         };
+    }
+    private static Gson gson;
+
+    private static <T> T getGsonBean() {
+        if(gson == null) {
+            gson  = new GsonBuilder().setPrettyPrinting().create();
+        }
+        return (T)gson;
     }
 
 }

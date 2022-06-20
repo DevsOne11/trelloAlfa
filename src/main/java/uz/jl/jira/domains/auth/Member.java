@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import uz.jl.jira.domains.enums.MemberStatus;
 
 /**
  * @Author :  Asliddin Ziyodullaev
@@ -16,7 +17,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Member extends Auditable {
-    private Long memberId;
+    private Long id;
     private Long userId;
-    private Boolean isTeamLead;
+    private Long organizationId;
+    private Long projectId;
+    private MemberStatus status;
+    private boolean blocked;
+    private boolean deleted;
 }

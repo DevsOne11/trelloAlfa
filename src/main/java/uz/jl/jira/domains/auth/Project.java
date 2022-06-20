@@ -2,6 +2,8 @@ package uz.jl.jira.domains.auth;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,10 +18,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class Project extends Auditable {
     private Long id;
     private String name;
-    private List<ProjectColumn> columnList;
-    private List<Member> memberList;
-    private Date deadline;
+    private List<Long> columns = new ArrayList<>();
+    private List<Long> members = new ArrayList<>();
+    private LocalDateTime createdAt;
+    private Long createdBy;
+    private LocalDateTime updatedAt;
+    private Long updatedBy;
+    private LocalDateTime deadline;
+    private boolean blocked = false;
+    private boolean deleted = false;
 }

@@ -27,7 +27,7 @@ public class UI {
         Writer.println("User Create -> 1");
         Writer.println("User List -> 2");
         String choice = new Scanner(System.in).next();
-        if (choice.equals("1")) userCreate();
+        if (choice.equals("1")) Registration.getInstance().registration();
         else if (choice.equals("2")) userList();
         else System.exit(0);
         main(args);
@@ -47,7 +47,7 @@ public class UI {
     private static void userCreate() {
 
         UserCreateVO.UserCreateVOBuilder builder = UserCreateVO.builder();
-        builder.userName(Reader.readLine("Username : "));
+        builder.username(Reader.readLine("Username : "));
         builder.password(Reader.readLine("Password : "));
         UserCreateVO userCreateVO = builder.build();
         ResponseEntity<Data<Long>> responseData = userService.create(userCreateVO);
@@ -57,4 +57,6 @@ public class UI {
             Writer.println(responseData.getData().getError(), Color.RED);
         }
     }
+
+
 }

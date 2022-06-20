@@ -1,7 +1,10 @@
 package uz.jl.jira.domains.auth;
 
 import lombok.*;
+import uz.jl.jira.domains.enums.TaskStatus;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,9 +18,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class Task extends Auditable{
     private Long id;
     private String name;
-    private List<Comment> commentList;
-    private List<Member> memberList;
+    private List<Long> comments = new ArrayList<>();
+    private List<Long> members = new ArrayList<>();
+    private LocalDateTime createdAt;
+    private Long createdBy;
+    private LocalDateTime updatedAt;
+    private Long updatedBy;
+    private TaskStatus status;
+    private boolean deleted;
 }

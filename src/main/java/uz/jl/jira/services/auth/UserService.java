@@ -2,12 +2,14 @@ package uz.jl.jira.services.auth;
 
 import lombok.NonNull;
 import uz.jl.jira.configs.ApplicationContextHolder;
+import uz.jl.jira.criteria.GenericCriteria;
 import uz.jl.jira.criteria.UserCriteria;
 import uz.jl.jira.domains.auth.User;
 import uz.jl.jira.mappers.BaseMapper;
 import uz.jl.jira.repository.AbstractRepository;
 import uz.jl.jira.repository.auth.UserRepository;
 import uz.jl.jira.services.GenericCRUDService;
+import uz.jl.jira.vo.GenericVO;
 import uz.jl.jira.vo.auth.userVO.UserCreateVO;
 import uz.jl.jira.vo.auth.userVO.UserUpdateVO;
 import uz.jl.jira.vo.auth.userVO.UserVO;
@@ -15,6 +17,7 @@ import uz.jl.jira.vo.response.Data;
 import uz.jl.jira.vo.response.ErrorVO;
 import uz.jl.jira.vo.response.ResponseEntity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -26,23 +29,24 @@ public class UserService extends AbstractRepository<UserRepository, BaseMapper> 
     private static UserService instance;
 
 
-    private UserService(UserRepository repository, BaseMapper mapper) {
+    private <C extends GenericCriteria, UVO extends GenericVO, VO extends GenericVO> UserService(UserRepository repository, BaseMapper mapper) {
         super(repository, mapper);
     }
+
 
     @Override
     public ResponseEntity<Data<Long>> create(@NonNull UserCreateVO dto) {
         User user = new User();
-        Optional<User> userOptional = repository.findByUsername(dto.getUserName());
+        Optional<User> userOptional = repository.findByUsername(dto.getUsername());
         if (userOptional.isPresent()) {
             return new ResponseEntity<>(new Data<>(ErrorVO
                     .builder()
-                    .friendlyMessage("User Name '%s already taken".formatted(dto.getUserName()))
+                    .friendlyMessage("User Name '%s already taken".formatted(dto.getUsername()))
                     .status(400)
                     .build()));
         }
 
-        user.setUserName(dto.getUserName());
+        user.setUserName(dto.getUsername());
         user.setPassword(dto.getPassword());
         repository.create(user);
 

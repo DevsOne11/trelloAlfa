@@ -15,6 +15,6 @@ import uz.jl.jira.vo.BaseVO;
 @Builder
 @With
 public class UserCreateVO implements BaseVO {
-    private String userName;
+    private String username;
     private String password;
 }

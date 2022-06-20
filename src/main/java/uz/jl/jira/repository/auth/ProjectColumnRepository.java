@@ -4,6 +4,8 @@ import uz.jl.jira.criteria.ProjectColumnCriteria;
 import uz.jl.jira.domains.auth.ProjectColumn;
 import uz.jl.jira.repository.GenericCRUDRepository;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,8 +17,12 @@ import java.util.Optional;
 public class ProjectColumnRepository implements GenericCRUDRepository<ProjectColumn, ProjectColumnCriteria,Long> {
 
     private static ProjectColumnRepository instance;
+    private static final List<ProjectColumn> columns = load();
     @Override
     public void create(ProjectColumn entity) {
+        entity.setId(System.currentTimeMillis());
+        entity.setCreatedAt(LocalDateTime.now());
+        columns.add(entity);
 
     }
 
@@ -31,13 +37,15 @@ public class ProjectColumnRepository implements GenericCRUDRepository<ProjectCol
     }
 
     @Override
-    public Optional<ProjectColumn> findById(Long aLong) {
-        return Optional.empty();
+    public Optional<ProjectColumn> findById(Long id) {
+        return columns.stream()
+                .filter(column -> column.getId().equals(id))
+                .findFirst();
     }
 
     @Override
     public Optional<List<ProjectColumn>> findAll(ProjectColumnCriteria criteria) {
-        return Optional.empty();
+        return Optional.of(columns);
     }
     public static ProjectColumnRepository getInstance() {
         if (instance == null) {
@@ -45,4 +53,8 @@ public class ProjectColumnRepository implements GenericCRUDRepository<ProjectCol
         }
         return instance;
     }
+    private static List<ProjectColumn> load() {
+        return new ArrayList<>();
+    }
+
 }

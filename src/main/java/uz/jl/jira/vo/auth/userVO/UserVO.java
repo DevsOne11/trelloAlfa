@@ -5,6 +5,8 @@ import uz.jl.jira.domains.auth.User;
 import uz.jl.jira.vo.GenericVO;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author "Elmurodov Javohir"
@@ -17,9 +19,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @ToString
 public class UserVO extends GenericVO {
+    private Long id;
     private String userName;
     private String password;
+    private String email;
+    private List<Long> organizations = new ArrayList<>();
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     public UserVO(User user) {
         super(user.getId());
