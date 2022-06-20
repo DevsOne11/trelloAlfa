@@ -4,6 +4,7 @@ import lombok.NonNull;
 import uz.jl.jira.configs.ApplicationContextHolder;
 import uz.jl.jira.criteria.MemberCriteria;
 import uz.jl.jira.mappers.BaseMapper;
+import uz.jl.jira.mappers.MemberMapper;
 import uz.jl.jira.repository.AbstractRepository;
 import uz.jl.jira.repository.auth.MemberRepository;
 import uz.jl.jira.services.GenericCRUDService;
@@ -20,15 +21,23 @@ import java.util.List;
  * @Date :  16:25   16/06/22
  * @Project :  trelloAlfa
  */
-public class MemberService extends AbstractRepository<MemberRepository, BaseMapper>
-        implements GenericCRUDService<MemberVO, MemberCreateVO, MemberUpdateVO, MemberCriteria, Long> {
-
+public class MemberService  extends AbstractRepository<MemberRepository, MemberMapper> implements
+        GenericCRUDService<MemberVO, MemberCreateVO, MemberUpdateVO, MemberCriteria, Long> {
     private static MemberService instance;
 
-    protected MemberService(MemberRepository repository, BaseMapper mapper) {
+    protected MemberService(MemberRepository repository, MemberMapper mapper) {
         super(repository, mapper);
     }
 
+    public static Object getInstance() {
+        if (instance == null) {
+            instance = new MemberService(
+                    ApplicationContextHolder.getBean(MemberRepository.class),
+                    ApplicationContextHolder.getBean(MemberMapper.class)
+            );
+        }
+        return instance;
+    }
 
     @Override
     public ResponseEntity<Data<Long>> create(@NonNull MemberCreateVO dto) {
@@ -54,15 +63,4 @@ public class MemberService extends AbstractRepository<MemberRepository, BaseMapp
     public ResponseEntity<Data<List<MemberVO>>> findAll(@NonNull MemberCriteria criteria) {
         return null;
     }
-
-    public static MemberService getInstance() {
-        if (instance == null){
-            instance = new MemberService(
-                    ApplicationContextHolder.getBean(MemberRepository.class),
-                    ApplicationContextHolder.getBean(BaseMapper.class)
-            );
-        }
-        return instance;
-    }
-
 }

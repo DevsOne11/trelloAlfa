@@ -20,13 +20,22 @@ import java.util.List;
  * @Date :  16:25   16/06/22
  * @Project :  trelloAlfa
  */
-public class CommentService extends AbstractRepository<CommentRepository, BaseMapper> implements GenericCRUDService<CommentVO, CommentCreateVO, CommentUpdateVO, CommentCriteria, Long> {
-
-    private  static CommentService instance;
-
+public class CommentService  extends AbstractRepository<CommentRepository, BaseMapper> implements
+        GenericCRUDService<CommentVO, CommentCreateVO, CommentUpdateVO, CommentCriteria, Long> {
+    private static CommentService instance;
 
     protected CommentService(CommentRepository repository, BaseMapper mapper) {
         super(repository, mapper);
+    }
+
+    public static Object getInstance() {
+        if (instance == null) {
+            instance = new CommentService(
+                    ApplicationContextHolder.getBean(CommentRepository.class),
+                    ApplicationContextHolder.getBean(BaseMapper.class)
+            );
+        }
+        return instance;
     }
 
     @Override
@@ -35,12 +44,12 @@ public class CommentService extends AbstractRepository<CommentRepository, BaseMa
     }
 
     @Override
-    public ResponseEntity<Data<Void>> delete(@NonNull Long aLong) {
+    public ResponseEntity<Data<String>> delete(@NonNull Long aLong) {
         return null;
     }
 
     @Override
-    public ResponseEntity<Data<Void>> update(@NonNull CommentUpdateVO dto) {
+    public ResponseEntity<Data<String>> update(@NonNull CommentUpdateVO dto) {
         return null;
     }
 
@@ -52,15 +61,5 @@ public class CommentService extends AbstractRepository<CommentRepository, BaseMa
     @Override
     public ResponseEntity<Data<List<CommentVO>>> findAll(@NonNull CommentCriteria criteria) {
         return null;
-    }
-
-    public static CommentService getInstance() {
-        if (instance == null) {
-            instance = new CommentService(
-                    ApplicationContextHolder.getBean(CommentRepository.class),
-                    ApplicationContextHolder.getBean(BaseMapper.class)
-            );
-        }
-        return instance;
     }
 }
